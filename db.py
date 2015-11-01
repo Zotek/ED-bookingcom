@@ -17,9 +17,12 @@ session = Session()
 model.Base.metadata.create_all(engine)
 
 
-hotel = model.Hotel()
-hotel.name = "sample_hotel"
+hotel_opinion_url = model.HotelOpinionUrl(hotel_name="Mariott", hotel_opinion_url="http://mariott.pl/opinie")
+hotel_opinion_url1 = model.HotelOpinionUrl(hotel_name="Sheraton", hotel_opinion_url="http://sheraton.pl/opinie")
+
+#hotel = model.Hotel()
+#hotel.name = "sample_hotel"
 #hotel.address_id = 5
 
-session.add(hotel)
+session.add_all([hotel_opinion_url, hotel_opinion_url1])
 session.commit()
