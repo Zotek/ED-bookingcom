@@ -15,15 +15,21 @@ class Hotel(Base):
 	price_level = Column(Float)
 	price = Column(Float)
 	stars = Column(Integer)
-	address_id = Column(BigInteger,ForeignKey('address.id'))
-	hotel_grade_id = Column(BigInteger,ForeignKey('hotel_grade.id'))
+	address_id = Column(BigInteger,ForeignKey("address.id"))
+	hotel_grade_id = Column(BigInteger,ForeignKey("hotel_grade.id"))
+
+class HotelFeature(Base):
+	__tablename__ = "hotel_feature"
+
+	hotel_id = Column(ForeignKey("hotel.id"),primary_key=True)
+	feature_id = Column(ForeignKey("feature.id"),primary_key=True)
 
 class Address(Base):
 	__tablename__ = "address"
 
 	id = Column(BigInteger,primary_key=True)
 	street = Column(String)
-	city_id = Column(BigInteger, ForeignKey('city.id'))
+	city_id = Column(BigInteger, ForeignKey("city.id"))
 
 class Cities(Base):
 	__tablename__ = "city"
@@ -58,20 +64,19 @@ class Opinion(Base):
 	date = Column(Date)
 	grade = Column(Float)
 	title = Column(String)
-	country = Column(ForeignKey('country.id'))
-	age_range = Column(ForeignKey('age_range.id'))
-	hotel_id = Column(ForeignKey('hotel.id'))
+	country = Column(ForeignKey("country.id"))
+	age_range = Column(ForeignKey("age_range.id"))
+	hotel_id = Column(ForeignKey("hotel.id"))
 
 
-
-class OpinionTags(Base):
+class OpinionTag(Base):
 	__tablename__ = "opinion_tag"
 	
-	tag = Column(ForeignKey('tag.id'),primary_key=True)
-	opinion = Column(ForeignKey('opinion.id'),primary_key=True)
+	tag = Column(ForeignKey("tag.id"),primary_key=True)
+	opinion = Column(ForeignKey("opinion.id"),primary_key=True)
 
 
-class Tags(Base):
+class Tag(Base):
 	__tablename__ = "tag"
 	
 	id = Column(String,primary_key=True)
@@ -80,6 +85,17 @@ class Tags(Base):
 class AgeRange(Base):
 	__tablename__ = "age_range"
 	
+	id = Column(String,primary_key=True)
+
+class Feature(Base):
+	__tablename__ = "feature"
+	
+	id = Column(String,primary_key=True)
+	category = Column(ForeignKey("feature_category.id"))
+
+class FeatureCategory(Base):
+	__tablename__ = "feature_category"
+
 	id = Column(String,primary_key=True)
 
 
