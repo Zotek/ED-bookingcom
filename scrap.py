@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
