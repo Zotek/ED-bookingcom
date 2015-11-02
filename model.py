@@ -1,5 +1,5 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Float, BigInteger, Date
+from sqlalchemy import Column, Integer, String, Float, BigInteger, Date, Boolean
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship, backref
 
@@ -16,6 +16,7 @@ class HotelUrl(Base):
 	hotel_opinion_url = Column(String)
 	hotel_stars = Column(Integer)
 	hotel_price = Column(Integer)
+	crawled = Column(Boolean)
 
 
 class Hotel(Base):
@@ -70,15 +71,17 @@ class Opinion(Base):
 	__tablename__ = "opinion"
 
 	id = Column(BigInteger,primary_key=True)
-	opinion = Column(String)
-	user = Column(String)
-	user_visits = Column(String)
+	
 	date = Column(Date)
 	grade = Column(Float)
 	title = Column(String)
-	country = Column(ForeignKey("country.id"))
-	age_range = Column(ForeignKey("age_range.id"))
 	hotel_id = Column(ForeignKey("hotel.id"))
+	country = Column(ForeignKey("country.id"),nullable=True)
+	age_range = Column(ForeignKey("age_range.id"),nullable=True)
+	user = Column(String,nullable=True)
+	user_opinions = Column(String,nullable=True)
+	positive = Column(String,nullable=True)
+	negative = Column(String,nullable=True)
 
 
 class OpinionTag(Base):
@@ -109,9 +112,3 @@ class FeatureCategory(Base):
 	__tablename__ = "feature_category"
 
 	id = Column(String,primary_key=True)
-
-
-class PriceLevel(Base):
-	__tablename__ = "price_level"
-	id = Column(Integer,primary_key=True)
-	description = Column(String)
