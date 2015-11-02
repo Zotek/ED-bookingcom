@@ -7,11 +7,12 @@ from sqlalchemy.orm import relationship, backref
 Base = declarative_base()
 
 # Model for temporary database to simplify crawling of the pages
-class HotelOpinionUrl(Base):
-	__tablename__ = "hotel_opinion_url"
+class HotelUrl(Base):
+	__tablename__ = "hotel_url"
 
 	id = Column(BigInteger, primary_key=True)
 	hotel_name = Column(String)
+	hotel_url = Column(String)
 	hotel_opinion_url = Column(String)
 
 
