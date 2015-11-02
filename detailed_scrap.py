@@ -5,6 +5,7 @@ from model import HotelUrl
 from opinion_scrap import getOpinionsAndHotelGrade
 from selenium.common.exceptions import NoSuchElementException
 from transaction import Transaction
+from utils import extract_address
 import atexit
 
 
@@ -39,13 +40,14 @@ for hotelurl in session.query(HotelUrl):
         fs = map(lambda x: x.text, category.find_elements_by_css_selector("li"))
         hotel_features[cat]=fs
 
-    address = map(lambda x: x.strip(),address.text.split(','))
+    address = extract_address(address.text)
     opinions,hotel_grade = getOpinionsAndHotelGrade(driver,hotelurl.hotel_opinion_url)
 
     #session, hotel_url, address, hotel_grade, description, opinions, features
     print description,address,hotel_features,opinions,hotel_grade
 
-    transaction = 
+    transaction = Transaction(session,hotelurl,address,hotel_grade,description,opinions,hotel_features)
+    transaction.commit()
 
     
     

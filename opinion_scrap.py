@@ -20,6 +20,7 @@ def _getScore(parent):
     hotel_grade ['staff'] = score_list.get_attribute("data-hotel_staff")
     hotel_grade ['value'] = score_list.get_attribute("data-hotel_value")
     hotel_grade ['wifi'] = score_list.get_attribute("data-hotel_wifi")
+    hotel_grade = dict(map(lambda (k,v):(k,v.replace(",",".")),hotel_grade.iteritems()))
     return hotel_grade 
 
 def getOpinionsAndHotelGrade(driver,url):
@@ -42,6 +43,7 @@ def getOpinionsAndHotelGrade(driver,url):
             op['positive'] = _findElementOrNone(review,"p.review_pos")
             op['negative'] = _findElementOrNone(review,"p.review_neg")
             op['grade'] = _findElementOrNone(review,"div.review_item_review_score")
+            op['date'] = _findElementOrNone(review,"p.review_item_date")
             ops.append(op)
         try:
             nextbutton = driver.find_element_by_css_selector("#review_next_page_link")
