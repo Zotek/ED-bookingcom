@@ -14,6 +14,8 @@ class HotelUrl(Base):
 	hotel_name = Column(String)
 	hotel_url = Column(String)
 	hotel_opinion_url = Column(String)
+	hotel_stars = Column(Integer)
+	hotel_price = Column(Integer)
 
 
 class Hotel(Base):

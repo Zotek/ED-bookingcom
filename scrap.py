@@ -54,6 +54,26 @@ def extractUrl(href):
     s2 = re.sub("hotel/pl", "reviews/pl/hotel", s)
     return (s, s2)
 
+def extractItem(item):
+
+    try:
+        stars_element = item.find_element_by_css_selector("i.stars")
+        stars = re.search("ratings_stars_(\d)",stars_element.get_attribute("class")).group(1)
+    except NoSuchElementException:
+        stars = 0
+    hotel_element = item.find_element_by_css_selector("a.hotel_name_link")
+    link = hotel_element.get_attribute("href")
+    name = hotel_element.text
+    try:
+        price_element = item.find_element_by_css_selector("div.sr_price_estimate__values")
+        price = re.search("sr_price_estimate__val(\d)",price_element.get_attribute("class")).group(1)
+    except NoSuchElementException:
+        price = 0
+    hotel,reviews = extractUrl(link)
+
+    return name,hotel,reviews,stars,price
+
+
 
 driver = webdriver.Firefox()
 db = Db()
@@ -73,9 +93,9 @@ for city in cities:
     driver.find_element_by_css_selector(".b-searchbox-button").submit()
     hotelList = []
     while True:
-        for link in driver.find_elements_by_css_selector("a.hotel_name_link"):
-            hotel,opinion = extractUrl(link.get_attribute("href"))
-            hotelList.append(HotelUrl(hotel_name=link.text,hotel_url=hotel,hotel_opinion_url=opinion))
+        for item in driver.find_elements_by_css_selector("div.sr_item"):
+            name,hotel,reviews,stars,price = extractItem(item)
+            hotelList.append(HotelUrl(hotel_name=name,	hotel_url = hotel,hotel_opinion_url=reviews,hotel_stars=stars,hotel_price=price))
         try:
             next_button = driver.find_element_by_css_selector(".paging-next")
         except NoSuchElementException:
