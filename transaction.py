@@ -67,6 +67,10 @@ class Transaction:
         streetObj.city_id = cityObj.id
         return streetObj
 
+    def _createOpinions(self):
+        pass
+
+
     def _getOrCreateTags(self):
         pass
 
