@@ -20,7 +20,7 @@ if __name__ == '__main__' :
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    model.Base.metadata.drop_all(engine)
+    # model.Base.metadata.drop_all(engine)
     model.Base.metadata.create_all(engine)
 
 

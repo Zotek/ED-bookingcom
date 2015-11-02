@@ -7,16 +7,16 @@ from sqlalchemy.orm import relationship, backref
 Base = declarative_base()
 
 # Model for temporary database to simplify crawling of the pages
-class HotelUrl(Base):
-	__tablename__ = "hotel_url"
-
-	id = Column(BigInteger, primary_key=True)
-	hotel_name = Column(String)
-	hotel_url = Column(String)
-	hotel_opinion_url = Column(String)
-	hotel_stars = Column(Integer)
-	hotel_price = Column(Integer)
-	crawled = Column(Boolean)
+# class HotelUrl(Base):
+# 	__tablename__ = "hotel_url"
+#
+# 	id = Column(BigInteger, primary_key=True)
+# 	hotel_name = Column(String)
+# 	hotel_url = Column(String)
+# 	hotel_opinion_url = Column(String)
+# 	hotel_stars = Column(Integer)
+# 	hotel_price = Column(Integer)
+# 	crawled = Column(Boolean)
 
 
 class Hotel(Base):
@@ -48,7 +48,8 @@ class Cities(Base):
 	__tablename__ = "city"
 
 	id = Column(BigInteger,primary_key=True)
-	street = Column(String)
+	name = Column(String)
+	country = Column(String,ForeignKey("country.id"))
 
 class Country(Base):
 	__tablename__ = "country"
