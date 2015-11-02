@@ -16,6 +16,7 @@ class Transaction:
         self.hotel_stars = hotel_url.hotel_stars
         self.hotel_price = hotel_url.hotel_price
         self.hotel_grade = hotel_grade
+        self.hotel_url = hotel_url
         self.hotel_description = description
         self.address = address
         self.opinions = opinions
@@ -38,6 +39,8 @@ class Transaction:
         self.session.add(hotel)
         self.session.flush()
         self._createOpinions(hotel.id)
+        self._createFeatures(hotel.id)
+        self.hotel_url.crawled = True
         self.session.commit()
 
 
@@ -120,8 +123,33 @@ class Transaction:
         return tagObj
 
 
-    def _getOrCreateFeatures(self):
-        pass
+    def _createFeatures(self,hotel_id):
+        for category,fs in self.features.iteritems():
+            catObj = self._getOrCreateCategory(category)
+            features = map(lambda f: self._getOrCreateFeature(f,catObj.id),fs)
+            hotelFeatures = map(lambda f: model.HotelFeature(hotel_id=hotel_id,feature_id=f.id),features)
+            self.session.add_all(hotelFeatures)
+            self.session.commit()
+
+
+    def _getOrCreateFeature(self,feature,category_id):
+        featureObj = self.session.query(model.Feature).filter(model.Feature.id==feature).first()
+        if featureObj == None:
+            featureObj = model.Feature()
+            featureObj.id = feature
+            featureObj.category=category_id
+            self.session.add(featureObj)
+            self.session.flush()
+        return featureObj
+
+    def _getOrCreateCategory(self,category):
+        categoryObj = self.session.query(model.FeatureCategory).filter(model.FeatureCategory.id==category).first()
+        if categoryObj == None:
+            categoryObj = model.FeatureCategory()
+            categoryObj.id = category
+            self.session.add(categoryObj)
+            self.session.flush()
+        return categoryObj
 
 
 
