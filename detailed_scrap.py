@@ -2,14 +2,21 @@ from selenium import webdriver
 from db import Db
 from sqlalchemy.orm import sessionmaker
 from model import HotelUrl
-from opinion_scrap import getReviewsAndOverall
+from opinion_scrap import getOpinionsAndHotelGrade
 from selenium.common.exceptions import NoSuchElementException
+from transaction import Transaction
+import atexit
 
-driver = webdriver.Firefox()
+
+profile = webdriver.FirefoxProfile()
+profile.set_preference("intl.accept_languages", "pl")
+driver = webdriver.Firefox(profile)
 db = Db()
 engine = db.getEngine()
 Session = sessionmaker(bind=engine)
 session = Session()
+
+atexit.register(lambda : driver.quit())
 
 def _findElementOrNone(parent,selector):
     try:
@@ -19,21 +26,26 @@ def _findElementOrNone(parent,selector):
 
 for hotelurl in session.query(HotelUrl):
 
+
+
     driver.get(hotelurl.hotel_url)
-    summ = driver.find_element_by_css_selector("#summary")
+    description = driver.find_element_by_css_selector("#summary").text
     address = driver.find_element_by_css_selector("#hp_address_subtitle")
     features = driver.find_elements_by_css_selector("div.facilitiesChecklistSection")
-    print address.text
-
+    
     hotel_features = {}
     for category in features:
         cat = category.find_element_by_css_selector("h5").text
         fs = map(lambda x: x.text, category.find_elements_by_css_selector("li"))
         hotel_features[cat]=fs
 
-    reviews,overall = getReviewsAndOverall(driver,hotelurl.hotel_opinion_url)
+    address = map(lambda x: x.strip(),address.text.split(','))
+    opinions,hotel_grade = getOpinionsAndHotelGrade(driver,hotelurl.hotel_opinion_url)
 
-    print summ
-    print hotel_features
-    print reviews
-    print overall
+    #session, hotel_url, address, hotel_grade, description, opinions, features
+    print description,address,hotel_features,opinions,hotel_grade
+
+    transaction = 
+
+    
+    
