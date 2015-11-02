@@ -6,17 +6,17 @@ from sqlalchemy.orm import relationship, backref
 
 Base = declarative_base()
 
-# Model for temporary database to simplify crawling of the pages
-# class HotelUrl(Base):
-# 	__tablename__ = "hotel_url"
-#
-# 	id = Column(BigInteger, primary_key=True)
-# 	hotel_name = Column(String)
-# 	hotel_url = Column(String)
-# 	hotel_opinion_url = Column(String)
-# 	hotel_stars = Column(Integer)
-# 	hotel_price = Column(Integer)
-# 	crawled = Column(Boolean)
+#Model for temporary database to simplify crawling of the pages
+class HotelUrl(Base):
+	__tablename__ = "hotel_url"
+
+	id = Column(BigInteger, primary_key=True)
+	hotel_name = Column(String)
+	hotel_url = Column(String)
+	hotel_opinion_url = Column(String)
+	hotel_stars = Column(Integer)
+	hotel_price = Column(Integer)
+	crawled = Column(Boolean)
 
 
 class Hotel(Base):
@@ -25,8 +25,7 @@ class Hotel(Base):
 	id = Column(BigInteger,primary_key=True)
 	name = Column(String)
 	description = Column(String)
-	price_level = Column(Float)
-	price = Column(Float)
+	price_level = Column(Integer)
 	stars = Column(Integer)
 	address_id = Column(BigInteger,ForeignKey("address.id"))
 	hotel_grade_id = Column(BigInteger,ForeignKey("hotel_grade.id"))
@@ -44,7 +43,7 @@ class Address(Base):
 	street = Column(String)
 	city_id = Column(BigInteger, ForeignKey("city.id"))
 
-class Cities(Base):
+class City(Base):
 	__tablename__ = "city"
 
 	id = Column(BigInteger,primary_key=True)
