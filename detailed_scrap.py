@@ -44,7 +44,7 @@ for hotelurl in session.query(HotelUrl).filter(HotelUrl.crawled==None):
     opinions,hotel_grade = getOpinionsAndHotelGrade(driver,hotelurl.hotel_opinion_url)
 
     #session, hotel_url, address, hotel_grade, description, opinions, features
-    print description,address,hotel_features,opinions,hotel_grade
+    # print description,address,hotel_features,opinions,hotel_grade
 
     transaction = Transaction(session,hotelurl,address,hotel_grade,description,opinions,hotel_features)
     transaction.commit()
