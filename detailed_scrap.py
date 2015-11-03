@@ -25,7 +25,7 @@ def _findElementOrNone(parent,selector):
     except NoSuchElementException:
         return None
 
-for hotelurl in session.query(HotelUrl):
+for hotelurl in session.query(HotelUrl).filter(HotelUrl.crawled==None):
 
 
 

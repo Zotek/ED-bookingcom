@@ -46,14 +46,14 @@ class Transaction:
 
     def _createGrade(self):
         grade = model.HotelGrade()
-        grade.grade = self.hotel_grade['main']
-        grade.cleanliness = self.hotel_grade['clean']
-        grade.comfort = self.hotel_grade['comfort']
-        grade.location = self.hotel_grade['location']
-        grade.features = self.hotel_grade['services']
-        grade.price_to_quality_ratio = self.hotel_grade['value']
-        grade.staff = self.hotel_grade['staff']
-        grade.wifi = self.hotel_grade['wifi']
+        grade.grade = self.hotel_grade.get('main',0)
+        grade.cleanliness = self.hotel_grade.get('clean',0)
+        grade.comfort = self.hotel_grade.get('comfort',0)
+        grade.location = self.hotel_grade.get('location',0)
+        grade.features = self.hotel_grade.get('services',0)
+        grade.price_to_quality_ratio = self.hotel_grade.get('value',0)
+        grade.staff = self.hotel_grade.get('staff',0)
+        grade.wifi = self.hotel_grade.get('wifi',0)
         self.session.add(grade)
         self.session.flush()
         return grade

@@ -11,7 +11,10 @@ def _findElementOrNone(parent,selector):
 
 def _getScore(parent):
     hotel_grade  = {}
+
     hotel_grade ['main'] = _findElementOrNone(parent,"#review_list_main_score")
+    if hotel_grade['main']==None:
+        return {}
     score_list = parent.find_element_by_css_selector("#review_list_score_breakdown")
     hotel_grade ['clean'] = score_list.get_attribute("data-hotel_clean")
     hotel_grade ['comfort'] = score_list.get_attribute("data-hotel_comfort")
@@ -20,7 +23,7 @@ def _getScore(parent):
     hotel_grade ['staff'] = score_list.get_attribute("data-hotel_staff")
     hotel_grade ['value'] = score_list.get_attribute("data-hotel_value")
     hotel_grade ['wifi'] = score_list.get_attribute("data-hotel_wifi")
-    hotel_grade = dict(map(lambda (k,v):(k,v.replace(",",".")),hotel_grade.iteritems()))
+    hotel_grade = dict(map(lambda (k,v):(k,v.replace(",",".")),filter(lambda x: x[1]!=None,hotel_grade.iteritems())))
     return hotel_grade 
 
 def getOpinionsAndHotelGrade(driver,url):
