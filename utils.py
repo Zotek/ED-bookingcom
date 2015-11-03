@@ -9,5 +9,5 @@ def extract_date(strdate):
     return datetime.date(int(r),m,int(d))
 
 def extract_address(straddress):
-    street,city,country = re.search("([\S ]+), \d{2}-\d{3} (\S+), (\S+)",straddress,re.UNICODE).groups()
+    street,city,country = re.search("([\S ]+), \d{2}\s?-\s?\d{3} (\S+), (\S+)",straddress,re.UNICODE).groups()
     return street.strip(),city.strip(),country.strip()
