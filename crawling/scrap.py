@@ -5,9 +5,9 @@ from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import NoSuchElementException
 import re
-from db import Db
+from ed.db import Db
 from sqlalchemy.orm import sessionmaker
-from model import HotelUrl
+from ed.model import HotelUrl
 
 cities = [u"Białystok",
           u"Bielsko-Biała",

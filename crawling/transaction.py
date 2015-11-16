@@ -1,4 +1,4 @@
-import model
+import ed.model
 from utils import extract_date
 
 class Transaction:
@@ -23,7 +23,7 @@ class Transaction:
         self.features = features
 
     def commit(self):
-        hotel = model.Hotel()
+        hotel = ed.model.Hotel()
         hotel.name = self.hotel_name
         hotel.description = self.hotel_description
         hotel.stars = self.hotel_stars
@@ -45,7 +45,7 @@ class Transaction:
 
 
     def _createGrade(self):
-        grade = model.HotelGrade()
+        grade = ed.model.HotelGrade()
         grade.grade = self.hotel_grade.get('main',0)
         grade.cleanliness = self.hotel_grade.get('clean',0)
         grade.comfort = self.hotel_grade.get('comfort',0)
@@ -61,14 +61,14 @@ class Transaction:
     def _getOrCreateAddress(self):
         street,city,country = self.address
         countryObj = self._getOrCreateCountry(country)
-        cityObj = self.session.query(model.City).filter(model.City.name == city).first()
+        cityObj = self.session.query(ed.model.City).filter(ed.model.City.name == city).first()
         if cityObj==None:
-            cityObj = model.City()
+            cityObj = ed.model.City()
             cityObj.name=city
             cityObj.country = countryObj.id
             self.session.add(cityObj)
             self.session.flush()
-        streetObj = model.Address()
+        streetObj = ed.model.Address()
         streetObj.street = street
         streetObj.city_id = cityObj.id
         self.session.add(streetObj)
@@ -76,9 +76,9 @@ class Transaction:
         return streetObj
 
     def _getOrCreateCountry(self,country):
-        countryObj = self.session.query(model.Country).filter(model.Country.id == country).first()
+        countryObj = self.session.query(ed.model.Country).filter(ed.model.Country.id == country).first()
         if countryObj==None:
-            countryObj = model.Country()
+            countryObj = ed.model.Country()
             countryObj.id=country
             self.session.add(countryObj)
             self.session.flush()
@@ -86,7 +86,7 @@ class Transaction:
 
     def _createOpinions(self, hotel_id):
         for opinion in self.opinions:
-            opinionObj = model.Opinion()
+            opinionObj = ed.model.Opinion()
             opinionObj.user = opinion['name']
             opinionObj.country = self._getOrCreateCountry(opinion['country']).id if opinion['country']!=None else None
             opinionObj.age_range = self._getOrCreateAgeRange(opinion['age_range'])
@@ -100,23 +100,23 @@ class Transaction:
             self.session.add(opinionObj)
             self.session.flush()
             tags = map(lambda tag: self._getOrCreateTags(tag), opinion['tags'])
-            optags = map(lambda tag: model.OpinionTag(tag=tag.id,opinion=opinionObj.id),tags)
+            optags = map(lambda tag: ed.model.OpinionTag(tag=tag.id,opinion=opinionObj.id),tags)
             self.session.add_all(optags)
             self.session.flush()
 
 
     def _getOrCreateAgeRange(self,arange):
-        arObj = self.session.query(model.AgeRange).filter(model.AgeRange.id==arange).first()
+        arObj = self.session.query(ed.model.AgeRange).filter(ed.model.AgeRange.id==arange).first()
         if arObj == None:
-            arObj = model.AgeRange()
+            arObj = ed.model.AgeRange()
             arObj.id = arange
             self.session.add(arObj)
             self.session.flush()
 
     def _getOrCreateTags(self,tag):
-        tagObj = self.session.query(model.Tag).filter(model.Tag.id==tag).first()
+        tagObj = self.session.query(ed.model.Tag).filter(ed.model.Tag.id==tag).first()
         if tagObj == None:
-            tagObj = model.Tag()
+            tagObj = ed.model.Tag()
             tagObj.id = tag
             self.session.add(tagObj)
             self.session.flush()
@@ -127,15 +127,15 @@ class Transaction:
         for category,fs in self.features.iteritems():
             catObj = self._getOrCreateCategory(category)
             features = map(lambda f: self._getOrCreateFeature(f,catObj.id),fs)
-            hotelFeatures = map(lambda f: model.HotelFeature(hotel_id=hotel_id,feature_id=f.id),features)
+            hotelFeatures = map(lambda f: ed.model.HotelFeature(hotel_id=hotel_id,feature_id=f.id),features)
             self.session.add_all(hotelFeatures)
             self.session.commit()
 
 
     def _getOrCreateFeature(self,feature,category_id):
-        featureObj = self.session.query(model.Feature).filter(model.Feature.id==feature).first()
+        featureObj = self.session.query(ed.model.Feature).filter(ed.model.Feature.id==feature).first()
         if featureObj == None:
-            featureObj = model.Feature()
+            featureObj = ed.model.Feature()
             featureObj.id = feature
             featureObj.category=category_id
             self.session.add(featureObj)
@@ -143,9 +143,9 @@ class Transaction:
         return featureObj
 
     def _getOrCreateCategory(self,category):
-        categoryObj = self.session.query(model.FeatureCategory).filter(model.FeatureCategory.id==category).first()
+        categoryObj = self.session.query(ed.model.FeatureCategory).filter(ed.model.FeatureCategory.id==category).first()
         if categoryObj == None:
-            categoryObj = model.FeatureCategory()
+            categoryObj = ed.model.FeatureCategory()
             categoryObj.id = category
             self.session.add(categoryObj)
             self.session.flush()
