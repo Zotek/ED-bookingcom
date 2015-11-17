@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from db import Db
+from ed.db import Db
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import func
 from sqlalchemy import desc
-from model import *
+from ed.model import *
 import utils
+from collections import Counter
 
 
 db = Db()
@@ -24,7 +25,29 @@ def city_hotel_dist(by):
     return  session.query(by,City.name,func.count(Hotel.id)).join(Address).join(City).group_by(by,City.name).all()
 
 def opinions_per_tag():
-	return session.query(Tag.id, func.count(Tag.id).label('count')).select_from(Tag).join(OpinionTag).join(Opinion).group_by(Tag.id).order_by(desc('count')).all()
+    return session.query(Tag.id, func.count(Tag.id).label('count')).select_from(Tag).join(OpinionTag).join(Opinion).group_by(Tag.id).order_by(desc('count')).all()
+
+def grades_and_stars():
+    return session.query(Opinion.grade, Hotel.stars).join(Hotel).all()
+
+def grades_hist_by_stars():
+    groups = []
+    for i in range(6):
+        groups.append([])
+    grades = grades_and_stars()
+    for grade,star in grades:
+        groups[star].append(grade)
+    histograms = map(lambda it : make_histogram(it,0,10,10,-0.5), groups)
+    return histograms
+
+def opinions_per_month_per_city():
+    return session.query(func.date_part('month',Opinion.date),City.name, func.count('*')).select_from(Opinion).join(Hotel).join(Address).join(City).group_by(City.name, func.date_part('month',Opinion.date)).all()
+
+
+def make_histogram(iterable,low,high,bins,shift):
+    step = (high - low + 0.0) / bins
+    dist = Counter((float(x) - low + shift) // step for x in iterable)
+    return [dist[b] for b in range(bins)]
 
 
 subq1 = session.query(City.name,City.id,func.count(Hotel.id).label('count')).select_from(Opinion).join(Hotel).join(Address).join(City).group_by(City.id,Hotel.id).subquery()
@@ -48,4 +71,9 @@ utils.to_csv(result, "avg_ops_hotel_stars.out")
 result = city_hotel_dist(Hotel.stars)
 utils.to_csv(result, "city_hotel_stars.out")
 
+result = grades_hist_by_stars()
+utils.to_csv(result,"grades_histograms_stars.out")
+
+result = opinions_per_month_per_city()
+utils.to_csv(result,"opinions_per_month_per_city.out")
 
