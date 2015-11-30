@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="settings.xml">
+<entry key="node_file" type="xstring" value="settings.xml"/>
+<config key="flow_stack"/>
+<config key="internal_node_subsettings">
+<entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
+</config>
+<config key="model">
+<config key="column-filter">
+<entry key="filter-type" type="xstring" value="STANDARD"/>
+<config key="included_names">
+<entry key="array-size" type="xint" value="73"/>
+<entry key="0" type="xstring" value="Wyjazd służbowy"/>
+<entry key="1" type="xstring" value="Podróżujący samotnie"/>
+<entry key="2" type="xstring" value="Pokój Jednoosobowy"/>
+<entry key="3" type="xstring" value="1 nocleg"/>
+<entry key="4" type="xstring" value="W parze"/>
+<entry key="5" type="xstring" value="Pokój DwuosobowyPokój typu Twin Deluxe"/>
+<entry key="6" type="xstring" value="5 noclegów"/>
+<entry key="7" type="xstring" value="Wyjazd wakacyjny"/>
+<entry key="8" type="xstring" value="2 noclegi"/>
+<entry key="9" type="xstring" value="Pokój Dwuosobowy"/>
+<entry key="10" type="xstring" value="Grupa"/>
+<entry key="11" type="xstring" value="Pokój typu Twin"/>
+<entry key="12" type="xstring" value="Wysłana przez urządzenie mobilne"/>
+<entry key="13" type="xstring" value="Z rodziną"/>
+<entry key="14" type="xstring" value="3 noclegi"/>
+<entry key="15" type="xstring" value="6 noclegów"/>
+<entry key="16" type="xstring" value="Ze zwierzęciem"/>
+<entry key="17" type="xstring" value="4 noclegi"/>
+<entry key="18" type="xstring" value="2 pokoje"/>
+<entry key="19" type="xstring" value="Pokój DwuosobowyPokój typu Twin"/>
+<entry key="20" type="xstring" value="7 noclegów"/>
+<entry key="21" type="xstring" value="Pokój Czteroosobowy"/>
+<entry key="22" type="xstring" value="Podróżujący z przyjaciółmi"/>
+<entry key="23" type="xstring" value="Pokój Dwuosobowy typu Standard"/>
+<entry key="24" type="xstring" value="Pokój Jednoosobowy typu Standard"/>
+<entry key="25" type="xstring" value="Pokój Jednoosobowy typu Deluxe"/>
+<entry key="26" type="xstring" value="Pokój typu Twin Standard"/>
+<entry key="27" type="xstring" value="Pokój Trzyosobowy"/>
+<entry key="28" type="xstring" value="Apartament"/>
+<entry key="29" type="xstring" value="Pokój DwuosobowyPokój typu Twin Standard"/>
+<entry key="30" type="xstring" value="Apartament z 1 sypialnią"/>
+<entry key="31" type="xstring" value="Pokój DwuosobowyPokój typu Twin Comfort"/>
+<entry key="32" type="xstring" value="Apartament typu Deluxe"/>
+<entry key="33" type="xstring" value="8 noclegów"/>
+<entry key="34" type="xstring" value="Apartament typu Studio 2 osoby dorosłe"/>
+<entry key="35" type="xstring" value="Apartament typu Studio"/>
+<entry key="36" type="xstring" value="Apartament typu Standard"/>
+<entry key="37" type="xstring" value="Apartament typu Suite"/>
+<entry key="38" type="xstring" value="Pokój typu Twin Deluxe"/>
+<entry key="39" type="xstring" value="Pokój Dwuosobowy typu Deluxe"/>
+<entry key="40" type="xstring" value="Pokój typu Twin Superior"/>
+<entry key="41" type="xstring" value="Apartament z 2 sypialniami"/>
+<entry key="42" type="xstring" value="Pokój typu Twin ze wspólną łazienką"/>
+<entry key="43" type="xstring" value="Pokój Trzyosobowy ze wspólną łazienką"/>
+<entry key="44" type="xstring" value="Apartament 2 osoby dorosłe"/>
+<entry key="45" type="xstring" value="Apartament z balkonem"/>
+<entry key="46" type="xstring" value="Pokój typu Twin z łazienką"/>
+<entry key="47" type="xstring" value="Pokój Dwuosobowy ze wspólną łazienką"/>
+<entry key="48" type="xstring" value="Apartament 3 osoby dorosłe"/>
+<entry key="49" type="xstring" value="Apartament 4 osoby dorosłe"/>
+<entry key="50" type="xstring" value="Pokój Dwuosobowy typu Superior"/>
+<entry key="51" type="xstring" value="Pokój typu Twin Economy"/>
+<entry key="52" type="xstring" value="Pokój Jednoosobowy typu Economy"/>
+<entry key="53" type="xstring" value="Apartament Dwupoziomowy"/>
+<entry key="54" type="xstring" value="Pokój Jednoosobowy ze wspólną łazienką"/>
+<entry key="55" type="xstring" value="Pokój DwuosobowyPokój typu Twin ze wspólną łazienką"/>
+<entry key="56" type="xstring" value="Pokój z łóżkiem typu kingsize"/>
+<entry key="57" type="xstring" value="Pokój z łóżkiem typu queensize i rozkładaną sofą"/>
+<entry key="58" type="xstring" value="Pokój Dwuosobowy z łazienką"/>
+<entry key="59" type="xstring" value="Apartament z 1 sypialnią 4 osoby dorosłe"/>
+<entry key="60" type="xstring" value="Apartament z 1 sypialnią 2 osoby dorosłe"/>
+<entry key="61" type="xstring" value="Pokój DwuosobowyPokój typu Twin Classic"/>
+<entry key="62" type="xstring" value="Apartament z 2 sypialniami 6 osób dorosłych"/>
+<entry key="63" type="xstring" value="Pokój typu Standard"/>
+<entry key="64" type="xstring" value="Apartament typu Comfort"/>
+<entry key="65" type="xstring" value="Pokój Dwuosobowy typu Economy"/>
+<entry key="66" type="xstring" value="Apartament z 1 sypialnią 24 osoby dorosłe"/>
+<entry key="67" type="xstring" value="Pokój DwuosobowyPokój typu Twin Economy"/>
+<entry key="68" type="xstring" value="Pokój typu Twin Classic"/>
+<entry key="69" type="xstring" value="Łóżko w pokoju wieloosobowym dla 8 osób"/>
+<entry key="70" type="xstring" value="Pokój Dwuosobowy typu Classic"/>
+<entry key="71" type="xstring" value="Pokój typu Queen"/>
+<entry key="72" type="xstring" value="name (#1)"/>
+</config>
+<config key="excluded_names">
+<entry key="array-size" type="xint" value="79"/>
+<entry key="0" type="xstring" value="id"/>
+<entry key="1" type="xstring" value="name"/>
+<entry key="2" type="xstring" value="description"/>
+<entry key="3" type="xstring" value="price_level"/>
+<entry key="4" type="xstring" value="stars"/>
+<entry key="5" type="xstring" value="address_id"/>
+<entry key="6" type="xstring" value="hotel_grade_id"/>
+<entry key="7" type="xstring" value="id (#1)"/>
+<entry key="8" type="xstring" value="grade"/>
+<entry key="9" type="xstring" value="cleanliness"/>
+<entry key="10" type="xstring" value="comfort"/>
+<entry key="11" type="xstring" value="location"/>
+<entry key="12" type="xstring" value="features"/>
+<entry key="13" type="xstring" value="staff"/>
+<entry key="14" type="xstring" value="price_to_quality_ratio"/>
+<entry key="15" type="xstring" value="wifi"/>
+<entry key="16" type="xstring" value="id (#2)"/>
+<entry key="17" type="xstring" value="date"/>
+<entry key="18" type="xstring" value="grade (#1)"/>
+<entry key="19" type="xstring" value="title"/>
+<entry key="20" type="xstring" value="country"/>
+<entry key="21" type="xstring" value="age_range"/>
+<entry key="22" type="xstring" value="user"/>
+<entry key="23" type="xstring" value="user_opinions"/>
+<entry key="24" type="xstring" value="positive"/>
+<entry key="25" type="xstring" value="negative"/>
+<entry key="26" type="xstring" value="sprzęt do grillowania"/>
+<entry key="27" type="xstring" value="ogród"/>
+<entry key="28" type="xstring" value="rosyjski"/>
+<entry key="29" type="xstring" value="angielski"/>
+<entry key="30" type="xstring" value="Bezpłatnie! Wi-Fi jest dostępne w całym obiekcie i jest bezpłatne."/>
+<entry key="31" type="xstring" value="pokoje dla niepalących"/>
+<entry key="32" type="xstring" value="udogodnienia dla niepełnosprawnych"/>
+<entry key="33" type="xstring" value="pokoje rodzinne"/>
+<entry key="34" type="xstring" value="winda"/>
+<entry key="35" type="xstring" value="ogrzewanie"/>
+<entry key="36" type="xstring" value="zakaz palenia obowiązuje we wszystkich pomieszczeniach ogólnodostępnych i prywatnych"/>
+<entry key="37" type="xstring" value="restauracja"/>
+<entry key="38" type="xstring" value="restauracja z wyborem dań z karty"/>
+<entry key="39" type="xstring" value="Bezpłatnie! Bezpłatny parking prywatny jest dostępny na miejscu (nie jest konieczna rezerwacja)."/>
+<entry key="40" type="xstring" value="pakiety lunchowe"/>
+<entry key="41" type="xstring" value="całodobowa recepcja"/>
+<entry key="42" type="xstring" value="Bezpłatnie! przechowalnia bagażu"/>
+<entry key="43" type="xstring" value="indywidualne zameldowanie / wymeldowanie"/>
+<entry key="44" type="xstring" value="pralnia"/>
+<entry key="45" type="xstring" value="zaplecze bankietowe / konferencyjne"/>
+<entry key="46" type="xstring" value="apartament dla nowożeńców"/>
+<entry key="47" type="xstring" value="taras"/>
+<entry key="48" type="xstring" value="bar"/>
+<entry key="49" type="xstring" value="obsługa pokoju"/>
+<entry key="50" type="xstring" value="usługa prasowania"/>
+<entry key="51" type="xstring" value="faks / ksero"/>
+<entry key="52" type="xstring" value="masaż"/>
+<entry key="53" type="xstring" value="śniadanie w pokoju"/>
+<entry key="54" type="xstring" value="Bezpłatnie! Bezpłatny Parking publiczny jest dostępny na miejscu (nie jest konieczna rezerwacja)."/>
+<entry key="55" type="xstring" value="część przeznaczona dla palących"/>
+<entry key="56" type="xstring" value="niemiecki"/>
+<entry key="57" type="xstring" value="piesze wycieczki"/>
+<entry key="58" type="xstring" value="Bezpłatnie! Wi-Fi jest dostępne w pomieszczeniach ogólnodostępnych i jest bezpłatne."/>
+<entry key="59" type="xstring" value="transfer (dodatkowo płatny)"/>
+<entry key="60" type="xstring" value="taras słoneczny"/>
+<entry key="61" type="xstring" value="Bezpłatnie! Wi-Fi jest dostępne w pokojach i jest bezpłatne."/>
+<entry key="62" type="xstring" value="transfer lotniskowy (dodatkowo płatny)"/>
+<entry key="63" type="xstring" value="jazda na rowerze"/>
+<entry key="64" type="xstring" value="wypożyczalnia rowerów"/>
+<entry key="65" type="xstring" value="przechowalnia bagażu"/>
+<entry key="66" type="xstring" value="sejf"/>
+<entry key="67" type="xstring" value="plac zabaw dla dzieci"/>
+<entry key="68" type="xstring" value="ekspresowe zameldowanie / wymeldowanie"/>
+<entry key="69" type="xstring" value="wspólna kuchnia"/>
+<entry key="70" type="xstring" value="wspólny salon / sala TV"/>
+<entry key="71" type="xstring" value="Parking nie jest dostępny."/>
+<entry key="72" type="xstring" value="narciarstwo"/>
+<entry key="73" type="xstring" value="przechowalnia nart"/>
+<entry key="74" type="xstring" value="sauna"/>
+<entry key="75" type="xstring" value="street"/>
+<entry key="76" type="xstring" value="city_id"/>
+<entry key="77" type="xstring" value="id (#3)"/>
+<entry key="78" type="xstring" value="country (#1)"/>
+</config>
+<entry key="enforce_option" type="xstring" value="EnforceExclusion"/>
+<config key="name_pattern">
+<entry key="pattern" type="xstring" value=""/>
+<entry key="type" type="xstring" value="Wildcard"/>
+<entry key="caseSensitive" type="xboolean" value="true"/>
+</config>
+<config key="datatype">
+<config key="typelist">
+<entry key="org.knime.core.data.BooleanValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.date.DateAndTimeValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.DoubleValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.IntValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.LongValue" type="xboolean" value="false"/>
+<entry key="org.knime.core.data.StringValue" type="xboolean" value="false"/>
+</config>
+</config>
+</config>
+</config>
+<entry key="customDescription" type="xstring" isnull="true" value=""/>
+<entry key="state" type="xstring" value="EXECUTED"/>
+<entry key="factory" type="xstring" value="org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory"/>
+<entry key="node-name" type="xstring" value="Column Filter"/>
+<entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
+<entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.base"/>
+<entry key="node-bundle-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
+<entry key="node-bundle-version" type="xstring" value="3.0.1.0049649"/>
+<entry key="node-feature-name" type="xstring" value="KNIME Core"/>
+<entry key="node-feature-symbolic-name" type="xstring" value="org.knime.features.base.feature.group"/>
+<entry key="node-feature-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
+<entry key="node-feature-version" type="xstring" value="3.0.1.0049658"/>
+<config key="factory_settings"/>
+<entry key="name" type="xstring" value="Column Filter"/>
+<entry key="hasContent" type="xboolean" value="true"/>
+<entry key="isInactive" type="xboolean" value="false"/>
+<config key="ports">
+<config key="port_1">
+<entry key="index" type="xint" value="1"/>
+<entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
+<entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 353658, Cols: 73"/>
+<entry key="port_dir_location" type="xstring" value="port_1"/>
+</config>
+</config>
+<config key="filestores">
+<entry key="file_store_location" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" value="85ea2be1-8fa3-4504-b8b9-525f426b7404"/>
+</config>
+</config>
