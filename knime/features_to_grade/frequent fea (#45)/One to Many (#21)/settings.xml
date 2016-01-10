@@ -6,46 +6,52 @@
 <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
 </config>
 <config key="model">
-<config key="TRANSACTION_COLUMN_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<config key="columns2Btransformed_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_columnfilter"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
-<entry key="TRANSACTION_COLUMN" type="xstring" value="BitVector"/>
-<config key="MAX_ITEMSET_LENGTH_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
+<config key="columns2Btransformed">
+<entry key="filter-type" type="xstring" value="STANDARD"/>
+<config key="included_names">
+<entry key="array-size" type="xint" value="1"/>
+<entry key="0" type="xstring" value="grade [Binned]"/>
 </config>
-<entry key="MAX_ITEMSET_LENGTH" type="xint" value="10"/>
-<config key="MIN_SUPPORT_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_double"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
+<config key="excluded_names">
+<entry key="array-size" type="xint" value="11"/>
+<entry key="0" type="xstring" value="name"/>
+<entry key="1" type="xstring" value="cleanliness [Binned]"/>
+<entry key="2" type="xstring" value="comfort [Binned]"/>
+<entry key="3" type="xstring" value="location [Binned]"/>
+<entry key="4" type="xstring" value="features [Binned]"/>
+<entry key="5" type="xstring" value="staff [Binned]"/>
+<entry key="6" type="xstring" value="price_to_quality_ratio [Binned]"/>
+<entry key="7" type="xstring" value="wifi [Binned]"/>
+<entry key="8" type="xstring" value="street"/>
+<entry key="9" type="xstring" value="name (#1)"/>
+<entry key="10" type="xstring" value="country (#1)"/>
 </config>
-<entry key="MIN_SUPPORT" type="xdouble" value="0.3"/>
-<config key="ITEMSET_TYPE_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
+<entry key="enforce_option" type="xstring" value="EnforceExclusion"/>
+<config key="name_pattern">
+<entry key="pattern" type="xstring" value=""/>
+<entry key="type" type="xstring" value="Wildcard"/>
+<entry key="caseSensitive" type="xboolean" value="true"/>
 </config>
-<entry key="ITEMSET_TYPE" type="xstring" value="CLOSED"/>
-<config key="ASSOCIATION_RULES_Internals">
+<config key="datatype">
+<config key="typelist">
+<entry key="org.knime.core.data.StringValue" type="xboolean" value="false"/>
+</config>
+</config>
+</config>
+<config key="removeSources_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
-<entry key="ASSOCIATION_RULES" type="xboolean" value="false"/>
-<config key="CONFIDENCE_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_double"/>
-<entry key="EnabledStatus" type="xboolean" value="false"/>
-</config>
-<entry key="CONFIDENCE" type="xdouble" value="0.8"/>
-<config key="UNDERLYING_STRUCT_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="UNDERLYING_STRUCT" type="xstring" value="ARRAY"/>
+<entry key="removeSources" type="xboolean" value="false"/>
 </config>
 <entry key="customDescription" type="xstring" isnull="true" value=""/>
 <entry key="state" type="xstring" value="EXECUTED"/>
-<entry key="factory" type="xstring" value="org.knime.base.node.mine.subgroupminer.SubgroupMinerFactory2"/>
-<entry key="node-name" type="xstring" value="Association Rule Learner"/>
+<entry key="factory" type="xstring" value="org.knime.base.node.preproc.columntrans2.One2ManyCol2NodeFactory"/>
+<entry key="node-name" type="xstring" value="One to Many"/>
 <entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
 <entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.base"/>
 <entry key="node-bundle-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
@@ -55,7 +61,7 @@
 <entry key="node-feature-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
 <entry key="node-feature-version" type="xstring" value="3.0.1.0049658"/>
 <config key="factory_settings"/>
-<entry key="name" type="xstring" value="Association Rule Learner"/>
+<entry key="name" type="xstring" value="One to Many"/>
 <entry key="hasContent" type="xboolean" value="true"/>
 <entry key="isInactive" type="xboolean" value="false"/>
 <config key="ports">
@@ -63,12 +69,12 @@
 <entry key="index" type="xint" value="1"/>
 <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
 <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-<entry key="port_object_summary" type="xstring" value="Rows: 4, Cols: 2"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 353658, Cols: 141"/>
 <entry key="port_dir_location" type="xstring" value="port_1"/>
 </config>
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" value="1fb0801a-1d66-4ebf-8d3b-74cf8502a59c"/>
 </config>
 </config>

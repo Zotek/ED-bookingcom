@@ -6,6 +6,11 @@
 <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
 </config>
 <config key="model">
+<config key="setColumn_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="setColumn" type="xstring" value="List(ColumnNames)"/>
 <config key="subsetColumn_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_string"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
@@ -19,11 +24,6 @@
 <entry key="useRowID" type="xboolean" value="false"/>
 <entry key="columnName" type="xstring" value="id (#2)"/>
 </config>
-<config key="setColumn_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="setColumn" type="xstring" value="List(ColumnNames)"/>
 <config key="appendSetListCol_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>

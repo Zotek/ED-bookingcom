@@ -17,7 +17,7 @@
 <entry key="scaling" type="xstring" value="shrink"/>
 </config>
 <entry key="customDescription" type="xstring" isnull="true" value=""/>
-<entry key="state" type="xstring" value="CONFIGURED"/>
+<entry key="state" type="xstring" value="EXECUTED"/>
 <entry key="factory" type="xstring" value="org.knime.base.node.mine.decisiontree2.image.DecTreeToImageNodeFactory"/>
 <entry key="node-name" type="xstring" value="Decision Tree To Image"/>
 <entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
@@ -30,16 +30,21 @@
 <entry key="node-feature-version" type="xstring" value="3.0.1.0049658"/>
 <config key="factory_settings"/>
 <entry key="name" type="xstring" value="Decision Tree To Image"/>
-<entry key="hasContent" type="xboolean" value="false"/>
+<entry key="hasContent" type="xboolean" value="true"/>
 <entry key="isInactive" type="xboolean" value="false"/>
 <config key="ports">
 <config key="port_1">
 <entry key="index" type="xint" value="1"/>
-<entry key="port_dir_location" type="xstring" isnull="true" value=""/>
+<entry key="port_spec_class" type="xstring" value="org.knime.core.node.port.image.ImagePortObjectSpec"/>
+<entry key="port_object_class" type="xstring" value="org.knime.core.node.port.image.ImagePortObject"/>
+<entry key="port_object_summary" type="xstring" value="PNG Image 800 x 600 with 12 KB"/>
+<entry key="port_spec_location" type="xstring" value="spec/spec.zip"/>
+<entry key="port_object_location" type="xstring" value="object/portobject.zip"/>
+<entry key="port_dir_location" type="xstring" value="port_1"/>
 </config>
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" value="07b832c8-3d2a-4b2d-9fdb-14ec298e288a"/>
 </config>
 </config>

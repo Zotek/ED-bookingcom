@@ -30,21 +30,11 @@
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
 <entry key="enableHilite" type="xboolean" value="false"/>
-<config key="valueDelimiter_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="valueDelimiter" type="xstring" value=", "/>
 <config key="sortInMemory_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
 <entry key="sortInMemory" type="xboolean" value="false"/>
-<config key="columnNamePolicy_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="columnNamePolicy" type="xstring" value="Aggregation method (column name)"/>
 <config key="aggregationColumn">
 <config key="columnNames">
 <entry key="array-size" type="xint" value="0"/>
@@ -62,6 +52,11 @@
 <config key="aggregationOperatorSettings"/>
 <config key="patternAggregators"/>
 <config key="dataTypeAggregators"/>
+<config key="columnNamePolicy_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="columnNamePolicy" type="xstring" value="Aggregation method (column name)"/>
 <config key="retainOrder_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
@@ -72,6 +67,11 @@
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
 <entry key="inMemory" type="xboolean" value="false"/>
+<config key="valueDelimiter_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="valueDelimiter" type="xstring" value=", "/>
 <config key="nodeVersion_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
@@ -105,6 +105,6 @@
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="9fda2755-e5d9-42bb-9df9-c02cef0b84e2"/>
+<entry key="file_store_id" type="xstring" value="43008a3e-8a6f-4096-86c5-0ec0627fe8f8"/>
 </config>
 </config>

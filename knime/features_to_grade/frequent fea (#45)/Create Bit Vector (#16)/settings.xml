@@ -11,10 +11,35 @@
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
 <entry key="columnType" type="xstring" value="MULTI_NUMERICAL"/>
+<config key="multiStringColumnPatter_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="false"/>
+</config>
+<entry key="multiStringColumnPatter" type="xstring" isnull="true" value=""/>
+<config key="multiStringColumnHasWildcards_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="false"/>
+</config>
+<entry key="multiStringColumnHasWildcards" type="xboolean" value="false"/>
+<config key="multiStringColumnCaseSensitive_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="false"/>
+</config>
+<entry key="multiStringColumnCaseSensitive" type="xboolean" value="false"/>
+<config key="multiStringColumnIsRegex_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="false"/>
+</config>
+<entry key="multiStringColumnIsRegex" type="xboolean" value="false"/>
+<config key="multiStringColumnSetMatching_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
+<entry key="EnabledStatus" type="xboolean" value="false"/>
+</config>
+<entry key="multiStringColumnSetMatching" type="xstring" value="MATCHING"/>
 <config key="multiColumnNames">
 <entry key="filter-type" type="xstring" value="STANDARD"/>
 <config key="included_names">
-<entry key="array-size" type="xint" value="121"/>
+<entry key="array-size" type="xint" value="123"/>
 <entry key="0" type="xstring" value="Wyjazd służbowy"/>
 <entry key="1" type="xstring" value="Podróżujący samotnie"/>
 <entry key="2" type="xstring" value="Pokój Jednoosobowy"/>
@@ -136,21 +161,17 @@
 <entry key="118" type="xstring" value="narciarstwo"/>
 <entry key="119" type="xstring" value="przechowalnia nart"/>
 <entry key="120" type="xstring" value="sauna"/>
+<entry key="121" type="xstring" value="(8.3,10]"/>
+<entry key="122" type="xstring" value="[0,8.3]"/>
 </config>
 <config key="excluded_names">
-<entry key="array-size" type="xint" value="12"/>
+<entry key="array-size" type="xint" value="6"/>
 <entry key="0" type="xstring" value="id"/>
 <entry key="1" type="xstring" value="price_level"/>
 <entry key="2" type="xstring" value="stars"/>
-<entry key="3" type="xstring" value="grade"/>
-<entry key="4" type="xstring" value="cleanliness"/>
-<entry key="5" type="xstring" value="comfort"/>
-<entry key="6" type="xstring" value="location"/>
-<entry key="7" type="xstring" value="features"/>
-<entry key="8" type="xstring" value="staff"/>
-<entry key="9" type="xstring" value="price_to_quality_ratio"/>
-<entry key="10" type="xstring" value="wifi"/>
-<entry key="11" type="xstring" value="user_opinions"/>
+<entry key="3" type="xstring" value="user_opinions"/>
+<entry key="4" type="xstring" value="city_id"/>
+<entry key="5" type="xstring" value="id (#3)"/>
 </config>
 <entry key="enforce_option" type="xstring" value="EnforceExclusion"/>
 <config key="name_pattern">
@@ -169,31 +190,6 @@
 </config>
 </config>
 </config>
-<config key="multiStringColumnPatter_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="false"/>
-</config>
-<entry key="multiStringColumnPatter" type="xstring" isnull="true" value=""/>
-<config key="multiStringColumnHasWildcards_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
-<entry key="EnabledStatus" type="xboolean" value="false"/>
-</config>
-<entry key="multiStringColumnHasWildcards" type="xboolean" value="false"/>
-<config key="multiStringColumnCaseSensitive_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
-<entry key="EnabledStatus" type="xboolean" value="false"/>
-</config>
-<entry key="multiStringColumnCaseSensitive" type="xboolean" value="false"/>
-<config key="multiStringColumnIsRegex_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
-<entry key="EnabledStatus" type="xboolean" value="false"/>
-</config>
-<entry key="multiStringColumnIsRegex" type="xboolean" value="false"/>
-<config key="multiStringColumnSetMatching_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_string"/>
-<entry key="EnabledStatus" type="xboolean" value="false"/>
-</config>
-<entry key="multiStringColumnSetMatching" type="xstring" value="MATCHING"/>
 <config key="singleNumericThreshold_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_double"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
@@ -241,7 +237,7 @@
 <entry key="vectorType" type="xstring" value="DENSE"/>
 </config>
 <entry key="customDescription" type="xstring" isnull="true" value=""/>
-<entry key="state" type="xstring" value="CONFIGURED"/>
+<entry key="state" type="xstring" value="EXECUTED"/>
 <entry key="factory" type="xstring" value="org.knime.base.node.preproc.bitvector.create.CreateBitVectorNodeFactory"/>
 <entry key="node-name" type="xstring" value="Create Bit Vector"/>
 <entry key="node-bundle-name" type="xstring" value="KNIME Base Nodes"/>
@@ -254,16 +250,19 @@
 <entry key="node-feature-version" type="xstring" value="3.0.1.0049658"/>
 <config key="factory_settings"/>
 <entry key="name" type="xstring" value="Create Bit Vector"/>
-<entry key="hasContent" type="xboolean" value="false"/>
+<entry key="hasContent" type="xboolean" value="true"/>
 <entry key="isInactive" type="xboolean" value="false"/>
 <config key="ports">
 <config key="port_1">
 <entry key="index" type="xint" value="1"/>
-<entry key="port_dir_location" type="xstring" isnull="true" value=""/>
+<entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
+<entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 353658, Cols: 19"/>
+<entry key="port_dir_location" type="xstring" value="port_1"/>
 </config>
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" isnull="true" value=""/>
+<entry key="file_store_id" type="xstring" value="687cffb8-bb48-41a8-b736-412d30c84ec7"/>
 </config>
 </config>

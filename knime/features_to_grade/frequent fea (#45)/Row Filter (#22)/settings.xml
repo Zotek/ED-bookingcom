@@ -8,11 +8,11 @@
 <config key="model">
 <config key="rowFilter">
 <entry key="RowFilter_TypeID" type="xstring" value="StringComp_RowFilter"/>
-<entry key="ColumnName" type="xstring" value="ColumnValues"/>
+<entry key="ColumnName" type="xstring" value="Consequent"/>
 <entry key="include" type="xboolean" value="true"/>
 <entry key="deepFiltering" type="xboolean" value="false"/>
 <entry key="CaseSensitive" type="xboolean" value="false"/>
-<entry key="Pattern" type="xstring" value="1"/>
+<entry key="Pattern" type="xstring" value="(8.3,10]"/>
 <entry key="hasWildCards" type="xboolean" value="false"/>
 <entry key="isRegExpr" type="xboolean" value="false"/>
 </config>
@@ -38,12 +38,12 @@
 <entry key="index" type="xint" value="1"/>
 <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
 <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-<entry key="port_object_summary" type="xstring" value="Rows: 1056158, Cols: 16"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 2638, Cols: 11"/>
 <entry key="port_dir_location" type="xstring" value="port_1"/>
 </config>
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="ee4fb718-ed3e-425b-a2f8-7af8ef08d998"/>
+<entry key="file_store_id" type="xstring" value="8c4af18f-c862-4527-b955-1687bb0c58d0"/>
 </config>
 </config>
